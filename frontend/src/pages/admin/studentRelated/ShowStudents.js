@@ -7,7 +7,7 @@ import {
     Paper, Box, IconButton
 } from '@mui/material';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
-import { BlackButton, BlueButton, CustomColorButton, GreenButton, GreyButton, SteelBlueButton, YellowButton } from '../../../components/buttonStyles';
+import { BlackButton, BlueButton, CustomColorButton, GreenButton, GreyButton, LightBlueButton, SteelBlueButton, YellowButton } from '../../../components/buttonStyles';
 import TableTemplate from '../../../components/TableTemplate';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
@@ -16,7 +16,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { KeyboardArrowUp, KeyboardArrowDown } from '@mui/icons-material';
+import { KeyboardArrowUp, KeyboardArrowDown, Light } from '@mui/icons-material';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Grow from '@mui/material/Grow';
 import Popper from '@mui/material/Popper';
@@ -110,17 +110,17 @@ const ShowStudents = () => {
         };
         return (
             <>
-                <IconButton onClick={() => deleteHandler(row.id, "Student")}>
+                {/* <IconButton onClick={() => deleteHandler(row.id, "Student")}>
                     <PersonRemoveIcon color="error" />
-                </IconButton>
-                <CustomColorButton variant="contained"
+                </IconButton> */}
+                <LightBlueButton variant="contained"
                     onClick={() => navigate("/Admin/students/student/" + row.id)}>
                     View
-                </CustomColorButton>
+                </LightBlueButton>
                 <React.Fragment>
                     <ButtonGroup  variant="contained" ref={anchorRef} aria-label="split button" sx={{ marginLeft: '1rem' }}>
                         <BlueButton  onClick={handleClick}>{options[selectedIndex]}</BlueButton>
-                        <CustomColorButton
+                        <LightBlueButton
                             size="small"
                             aria-controls={open ? 'split-button-menu' : undefined}
                             aria-expanded={open ? 'true' : undefined}
@@ -129,7 +129,7 @@ const ShowStudents = () => {
                             onClick={handleToggle}
                         >
                             {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-                        </CustomColorButton>
+                        </LightBlueButton>
                     </ButtonGroup>
                     <Popper
                         sx={{

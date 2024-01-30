@@ -44,7 +44,7 @@ export const BlueButton = styled(Button)`
   && {
     background-color: #080a43;
     color: #fff;
-    margin: 1rem;
+    margin: .3rem;
     &:hover {
       background-color: #0a1e82;
     }

@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFileStuff } from '../../../redux/userRelated/userHandle';
 import { underControl } from '../../../redux/userRelated/userSlice';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, Paper } from '@mui/material';
 import Popup from '../../../components/Popup';
-import { BlackButton, CustomColorButton } from '../../../components/buttonStyles';
+import { BlackButton, CustomColorButton, LightBlueButton } from '../../../components/buttonStyles';
 
 const AddTimetable = () => {
   const dispatch = useDispatch();
@@ -80,13 +80,13 @@ const AddTimetable = () => {
             </div>
           )}
 
-          <BlackButton disabled={loader}>
+          <LightBlueButton style = {{marginTop: '1rem'}} disabled={loader}>
             {loader ? (
               <CircularProgress size={24} color="inherit" />
             ) : (
               'Upload'
             )}
-          </BlackButton>
+          </LightBlueButton>
         </form>
       </div>
       <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />

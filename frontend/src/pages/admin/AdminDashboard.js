@@ -44,6 +44,8 @@ import AddClass from "./classRelated/AddClass";
 import ClassDetails from "./classRelated/ClassDetails";
 import ShowClasses from "./classRelated/ShowClasses";
 import AccountMenu from "../../components/AccountMenu";
+import UcpLogo from "../../assets/ucpLogo.jpeg";
+import UcpDark from '../../assets/UcpDarkLogo.jpeg'
 
 const AdminDashboard = () => {
   const [open, setOpen] = useState(false);
@@ -55,7 +57,7 @@ const AdminDashboard = () => {
     <>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar open={open} position="absolute">
+        <AppBar style={{backgroundColor: '#080a43'}} open={open} position="absolute">
           <Toolbar sx={{ pr: "24px" }}>
             <IconButton
               edge="start"
@@ -69,6 +71,11 @@ const AdminDashboard = () => {
             >
               <MenuIcon />
             </IconButton>
+            <img
+              src={UcpLogo}
+              alt="UcpLogo"
+              style={{ width: "50px", height: "50px", margin: "10px" ,  borderRadius: '25px'}}
+            />
             <Typography
               component="h1"
               variant="h6"
@@ -76,7 +83,7 @@ const AdminDashboard = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Admin Dashboard
+              University of Central Punjab
             </Typography>
             <AccountMenu />
           </Toolbar>
@@ -86,18 +93,53 @@ const AdminDashboard = () => {
           open={open}
           sx={open ? styles.drawerStyled : styles.hideDrawer}
         >
-          <Toolbar sx={styles.toolBarStyled}>
-            <IconButton onClick={toggleDrawer}>
+        
+          <Toolbar
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "#080a43",
+              color: "white",
+            }}
+            sx={styles.toolBarStyled}
+          >
+            <IconButton
+              style={{ color: "white !important" }}
+              onClick={toggleDrawer}
+            >
               <ChevronLeftIcon />
             </IconButton>
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              marginLeft="1rem"
+            >
+              <IconButton>
+                <img
+                  src={UcpDark}
+                  alt="UcpDarkLogo"
+                  style={{ width: "70px", height: "60px", marginRight: '2rem'  ,  borderRadius: '25px'}}
+                />
+              </IconButton>
+
+              <Typography
+                style={{ textAlign: "center" , marginRight: '2rem'}}
+              >
+                Admin Dashboard
+              </Typography>
+            </Box>
           </Toolbar>
           <Divider />
           <List component="nav">
             <SideBar />
           </List>
         </Drawer>
+
         <Box component="main" sx={styles.boxStyled}>
           <Toolbar />
+
           <Routes>
             <Route path="/" element={<AdminHomePage />} />
             <Route path="*" element={<Navigate to="/" />} />

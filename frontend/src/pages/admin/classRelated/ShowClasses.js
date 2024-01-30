@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteUser } from "../../../redux/userRelated/userHandle";
 import { getAllSclasses } from "../../../redux/sclassRelated/sclassHandle";
-import { BlueButton, CustomColorButton, GreenButton } from "../../../components/buttonStyles";
+import { BlueButton, CustomColorButton, GreenButton, LightBlueButton } from "../../../components/buttonStyles";
 import TableTemplate from "../../../components/TableTemplate";
 
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
@@ -87,14 +87,14 @@ const ShowClasses = () => {
           onClick={() => deleteHandler(row.id, "Sclass")}
           color="secondary"
         >
-          <DeleteIcon color="error" />
+          
         </IconButton>
-        <CustomColorButton
+        <LightBlueButton
           variant="contained"
           onClick={() => navigate("/Admin/classes/class/" + row.id)}
         >
           View
-        </CustomColorButton>
+        </LightBlueButton>
         <ActionMenu actions={actions} />
       </ButtonContainer>
     );
@@ -172,12 +172,12 @@ const ShowClasses = () => {
         <>
           <CenteredContainer>
             {getresponse ? (
-              <GreenButton
+              <LightBlueButton
                 variant="contained"
                 onClick={() => navigate("/Admin/addclass")}
               >
                 Add Class
-              </GreenButton>
+              </LightBlueButton>
             ) : (
               <>
                 <Paper  sx={{ width: "80%", padding: 2, borderRadius: 5}}>

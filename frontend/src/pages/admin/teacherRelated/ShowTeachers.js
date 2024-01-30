@@ -9,7 +9,7 @@ import {
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import { StyledTableCell, StyledTableRow } from '../../../components/styles';
-import { BlueButton, CustomColorButton, GreenButton } from '../../../components/buttonStyles';
+import { BlueButton, CustomColorButton, GreenButton, LightBlueButton } from '../../../components/buttonStyles';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
@@ -137,13 +137,13 @@ const ShowTeachers = () => {
                                             );
                                         })}
                                         <StyledTableCell align="center">
-                                            <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
+                                            {/* <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
                                                 <PersonRemoveIcon color="error" />
-                                            </IconButton>
-                                            <CustomColorButton variant="contained"
+                                            </IconButton> */}
+                                            <LightBlueButton variant="contained"
                                                 onClick={() => navigate("/Admin/teachers/teacher/" + row.id)}>
                                                 View
-                                            </CustomColorButton>    
+                                            </LightBlueButton>    
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 );

@@ -7,7 +7,7 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 import { Paper, Box, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import TableTemplate from "../../../components/TableTemplate";
-import { BlueButton, CustomColorButton, GreenButton } from "../../../components/buttonStyles";
+import { BlueButton, CustomColorButton, GreenButton, LightBlueButton } from "../../../components/buttonStyles";
 import SpeedDialTemplate from "../../../components/SpeedDialTemplate";
 import Popup from "../../../components/Popup";
 
@@ -62,16 +62,16 @@ const ShowSubjects = () => {
     return (
       <>
         <IconButton onClick={() => deleteHandler(row.id, "Subject")}>
-          <DeleteIcon color="error" />
+          
         </IconButton>
-        <CustomColorButton
+        <LightBlueButton
           variant="contained"
           onClick={() =>
             navigate(`/Admin/subjects/subject/${row.sclassID}/${row.id}`)
           }
         >
           View
-        </CustomColorButton>
+        </LightBlueButton>
       </>
     );
   };
