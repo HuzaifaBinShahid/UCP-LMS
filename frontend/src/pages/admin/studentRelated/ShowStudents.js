@@ -7,7 +7,7 @@ import {
     Paper, Box, IconButton
 } from '@mui/material';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
-import { BlackButton, BlueButton, GreenButton } from '../../../components/buttonStyles';
+import { BlackButton, BlueButton, CustomColorButton, GreenButton, GreyButton, SteelBlueButton, YellowButton } from '../../../components/buttonStyles';
 import TableTemplate from '../../../components/TableTemplate';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
@@ -113,14 +113,14 @@ const ShowStudents = () => {
                 <IconButton onClick={() => deleteHandler(row.id, "Student")}>
                     <PersonRemoveIcon color="error" />
                 </IconButton>
-                <BlueButton variant="contained"
+                <CustomColorButton variant="contained"
                     onClick={() => navigate("/Admin/students/student/" + row.id)}>
                     View
-                </BlueButton>
+                </CustomColorButton>
                 <React.Fragment>
-                    <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-                        <Button onClick={handleClick}>{options[selectedIndex]}</Button>
-                        <BlackButton
+                    <ButtonGroup  variant="contained" ref={anchorRef} aria-label="split button" sx={{ marginLeft: '1rem' }}>
+                        <BlueButton  onClick={handleClick}>{options[selectedIndex]}</BlueButton>
+                        <CustomColorButton
                             size="small"
                             aria-controls={open ? 'split-button-menu' : undefined}
                             aria-expanded={open ? 'true' : undefined}
@@ -129,7 +129,7 @@ const ShowStudents = () => {
                             onClick={handleToggle}
                         >
                             {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-                        </BlackButton>
+                        </CustomColorButton>
                     </ButtonGroup>
                     <Popper
                         sx={{
@@ -197,7 +197,11 @@ const ShowStudents = () => {
                             </GreenButton>
                         </Box>
                         :
-                        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                        <Paper sx={{width: '80%',
+                        padding: 2,
+                        borderRadius: 5,
+                        margin: 'auto',
+                        marginTop: 4, }}>
                             {Array.isArray(studentsList) && studentsList.length > 0 &&
                                 <TableTemplate buttonHaver={StudentButtonHaver} columns={studentColumns} rows={studentRows} />
                             }

@@ -199,7 +199,7 @@ console.log(
                         >
                             {chosenSubName &&
                             <QRCode value={
-                                "http://192.168.100.27:3000/markattendance/" + studentID+"/"+chosenSubName } />}
+                                "http://192.168.10.7:3000/markattendance/" + studentID+"/"+chosenSubName } />}
                         </Box>
                     </Box>
                     <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />

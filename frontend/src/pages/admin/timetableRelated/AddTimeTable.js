@@ -5,6 +5,7 @@ import { addFileStuff } from '../../../redux/userRelated/userHandle';
 import { underControl } from '../../../redux/userRelated/userSlice';
 import { CircularProgress } from '@mui/material';
 import Popup from '../../../components/Popup';
+import { BlackButton, CustomColorButton } from '../../../components/buttonStyles';
 
 const AddTimetable = () => {
   const dispatch = useDispatch();
@@ -79,13 +80,13 @@ const AddTimetable = () => {
             </div>
           )}
 
-          <button style={{ marginTop: '20px', backgroundColor: '#4CAF50', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '4px', cursor: 'pointer' }} type="submit" disabled={loader}>
+          <BlackButton disabled={loader}>
             {loader ? (
               <CircularProgress size={24} color="inherit" />
             ) : (
               'Upload'
             )}
-          </button>
+          </BlackButton>
         </form>
       </div>
       <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />

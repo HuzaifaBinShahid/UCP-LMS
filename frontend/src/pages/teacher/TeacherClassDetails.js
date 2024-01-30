@@ -150,7 +150,7 @@ const TeacherClassDetails = () => {
             ) : (
                 <>
                     <Typography variant="h4" align="center" gutterBottom>
-                        Class Details
+                        CLASS DETAILS
                     </Typography>
                     {getresponse ? (
                         <>
@@ -159,9 +159,13 @@ const TeacherClassDetails = () => {
                             </Box>
                         </>
                     ) : (
-                        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+                        <Paper sx ={{ width: '70%',
+                        padding: 2,
+                        borderRadius: 5,
+                        margin: 'auto',
+                        marginTop: 4,}} >
                             <Typography variant="h5" gutterBottom>
-                                Students List:
+                                Students List
                             </Typography>
 
                             {Array.isArray(sclassStudents) && sclassStudents.length > 0 &&

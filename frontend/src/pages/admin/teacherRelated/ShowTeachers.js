@@ -9,7 +9,7 @@ import {
 import { deleteUser } from '../../../redux/userRelated/userHandle';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import { StyledTableCell, StyledTableRow } from '../../../components/styles';
-import { BlueButton, GreenButton } from '../../../components/buttonStyles';
+import { BlueButton, CustomColorButton, GreenButton } from '../../../components/buttonStyles';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import SpeedDialTemplate from '../../../components/SpeedDialTemplate';
 import Popup from '../../../components/Popup';
@@ -83,7 +83,11 @@ const ShowTeachers = () => {
     ];
 
     return (
-        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+        <Paper sx={{ width: '80%',
+        padding: 2,
+        borderRadius: 5,
+        margin: 'auto',
+        marginTop: 4, }}>
             <TableContainer>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
@@ -136,10 +140,10 @@ const ShowTeachers = () => {
                                             <IconButton onClick={() => deleteHandler(row.id, "Teacher")}>
                                                 <PersonRemoveIcon color="error" />
                                             </IconButton>
-                                            <BlueButton variant="contained"
+                                            <CustomColorButton variant="contained"
                                                 onClick={() => navigate("/Admin/teachers/teacher/" + row.id)}>
                                                 View
-                                            </BlueButton>
+                                            </CustomColorButton>    
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 );
